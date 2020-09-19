@@ -1,5 +1,4 @@
 const axios = require('axios');
-const querystring = require('querystring');
 
 export const EDID =(data)=>{
     return{
@@ -33,7 +32,7 @@ export const createStory= async (data)=>{
 
 
    
-    let res = await axios.post('http://localhost:5000/api/v1/createstroy', data);
+    let res = await axios.post('/api/v1/createstroy', data);
 
 }
 
@@ -42,7 +41,7 @@ export const createStory= async (data)=>{
 
 export const dashbordstories= (userid)=> async (dispatch)=>{
 
-    const result = await axios.post('http://localhost:5000/api/v1/dashbordstories',{userid});
+    const result = await axios.post('/api/v1/dashbordstories',{userid});
 
     dispatch( {
         type:'dashbord_STORIES',
@@ -55,7 +54,7 @@ export const dashbordstories= (userid)=> async (dispatch)=>{
 
 export const publicStories=()=>(dispatch)=>{
     
-    axios.get('http://localhost:5000/api/v1/public').then((result)=>{
+    axios.get('/api/v1/public').then((result)=>{
 
 
       dispatch({
@@ -81,7 +80,7 @@ export const editData=(data,update)=>{
 
 export const updateData= async (data)=>{
 
-  axios.post('http://localhost:5000/api/v1/update', data).then((result)=>{
+  axios.post('/api/v1/update', data).then((result)=>{
       return
 
   })
@@ -93,7 +92,7 @@ export const deleteData=(data)=>async (dispatch)=>{
 
     const {id,userid} = data;
 
-    let result = await axios.post('http://localhost:5000/api/v1/delete', {id,userid});
+    let result = await axios.post('/api/v1/delete', {id,userid});
 
     dispatch( {
         type:'dashbord_STORIES',
