@@ -39,7 +39,7 @@ const useStyles = makeStyles({
         {title}
         </Typography>
      
-        <Typography variant="body2" component="p">
+        <Typography variant="body2" component="span">
           {body}
         </Typography>
       </CardContent>

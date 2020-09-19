@@ -1,9 +1,10 @@
 import React from 'react';
+import abc from './abc.jpg';
 const Footer = () => {
     return (
         <footer className="footer">
           <div className='developeinfor'>
-          <img className='developeinfor__image' src='http://www.simpleimageresizer.com/_uploads/photos/73122428/footer-image_1_200x200.jpg' alt='loading'/>  
+          <img className='developeinfor__image' style={{height:'9rem'}} src={abc} alt='loading'/>  
     
           <div className='developeinfor__bio'>
             <h4 className='developeinfor__bio--name'>Hello word Developer</h4>
@@ -18,9 +19,9 @@ const Footer = () => {
 
           <div >
           <form action="" className='feedbackForm' onSubmit={e=> e.preventDefault()}>
-       <label for="">Enter Email</label>
+       <label >Enter Email</label>
             <input type="email"/>
-          <label for="">Enter message</label>
+          <label >Enter message</label>
           <input type="text"/>
           <button>Submit</button>
           </form>

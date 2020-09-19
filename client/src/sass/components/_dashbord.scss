@@ -84,9 +84,10 @@ font-size: 1.5rem
 
 .newStroyButton{
     position: absolute !important;
-top: 79% !important;
-right: 13% !important;
+top: 99% !important;
+right: 2% !important;
 z-index: 10 !important;
+
 }
 
 @media(max-width:900px){
@@ -111,4 +112,12 @@ z-index: 10 !important;
 font-weight: 800;
 padding: 10rem;
 text-align: center;
+}
+@media (max-width:500px){
+.notStoryText{
+padding: 2rem;
+
+
+}
+
 }

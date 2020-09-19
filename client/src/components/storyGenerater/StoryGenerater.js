@@ -26,11 +26,10 @@ class Stoygenerater extends Component{
 
         }else{
 
-            let today = new Date().toISOString().slice(0, 10)
 
 
             const obj =  this.props.auth.profile;
-            const data={...val,userid:obj.getName()+' '+obj.getId()}
+            const data={...val,userid:obj.getName()+' '+obj.getId(),imageURL:obj.getImageUrl()}
             createStory(data);
             this.props.history.push('/dashbord')
 

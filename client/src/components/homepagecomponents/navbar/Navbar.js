@@ -16,22 +16,24 @@ class Example extends Component {
 
   }
 
+
+  handleMenuItemClicked=()=> {
+    this.menuObj.handleClick();
+  }
+
   render() {
-    // console.log('this.props.auth.isSignedIn '+this.props.auth.isSignedIn);
-    // if(this.props.auth.isSignedIn){
-    //   return <Redirect to={'/dashbord'} />
-    // } 
-    
+   
  
     return (
       <ResponsiveMenu
         menuOpenButton={<MenuRounded className='button'/>}
         menuCloseButton={<CancelRounded className='button'/>}
         changeMenuOn="900px"
+        ref={menu=> this.menuObj = menu}
         largeMenuClassName="large-menu-classname"
         smallMenuClassName="small-menu-classname"
         menu={
-          <div className='menuList'>
+          <div className='menuList' onClick={this.handleMenuItemClicked}>
                   <Link className='menuList__menuItem' style={{ textDecoration:'none',color:'white'}} to='/'>Home</Link>
                   <Divider className='divider'/>
                   <Link className='menuList__menuItem' to='/dashbord'>Dashbord</Link>

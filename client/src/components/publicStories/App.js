@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import PublicStories from './PublicStories';
 import {connect} from 'react-redux';
 import {publicStories} from '../../Actions';
-
 class App extends Component {
+
 
   
 
 
   componentDidMount(){
+
 
     this.props.publicStories();
 
@@ -24,17 +25,19 @@ class App extends Component {
 
         return(
           <div>
+            
 
           {
             this.props.userData.length!==0 ? this.props.userData.map((data,index)=>{
-              const {userid,title,body}=data;
+              const {userid,title,body,imageURL}=data;
                 return <PublicStories 
+                key={index}
                 name={userid.split(' ')[0]}
                 title={title}
                 body={body}
-                image={this.props.auth.isSignedIn ?  this.props.auth.profile.getImageUrl():null}
+                image={require('../../image/'+imageURL)}
               />
-            }):<div className='notStoryText'>not Public story found</div>
+            }):<div className='notStoryText'>No Public story found</div>
 
           }
            </div>

@@ -3,6 +3,7 @@ const express= require('express');
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const download = require('image-downloader')
 
 require('dotenv').config();
 const StoryData = require('./model/storiesModel');
@@ -13,21 +14,26 @@ app.use(cors({origin: true}));
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
+const path = require('path');
 
 
-const uri ="mongodb+srv://test:test@cluster0.tcsdw.mongodb.net/<usman>?retryWrites=true&w=majority"
+const uri ="mongodb+srv://test:test@cluster0.tcsdw.mongodb.net/<abc>?retryWrites=true&w=majority"
 mongoose
      .connect( uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
      .then(() => console.log( 'Database Connected' ))
      .catch(err => console.log( err ));
 
 
+   
+    
+
 app.post('/api/v1/dashbordstories',(req,res)=>{
 
     const userID= req.body.userid;
     
-    
+
+   
     StoryData.find({userid:userID}).then((result)=>{
         if(result){
             res.send(result);
@@ -45,12 +51,30 @@ app.post('/api/v1/dashbordstories',(req,res)=>{
 
 app.post('/api/v1/createstroy',async (req,res)=>{
 
+    const {imageURL,userid}= req.body;
 
-   const newStory= await new StoryData(req.body).save();
-   res.send(newStory);
-   
+     
+    const options = {
+        url: imageURL,
+        dest: path.resolve(__dirname, 'client', 'src', `image/${userid}.jpg`)
+      }
+      
+    const omg=await download.image(options);
+  
+    const abc={...req.body,imageURL:userid+'.jpg'}
 
-});
+    const newStory= await new StoryData(abc).save();
+    
+  });
+
+  app.get('/abc',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'abc.jpg' ));
+  })
+
+
+
+
+
 
 
 
@@ -113,7 +137,6 @@ if (process.env.NODE_ENV === 'production') {
   
     // Express will serve up the index.html file
     // if it doesn't recognize the route
-    const path = require('path');
     app.get('*', (req, res) => {
       res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     });

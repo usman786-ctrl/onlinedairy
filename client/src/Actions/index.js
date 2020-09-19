@@ -28,11 +28,9 @@ export const signOut=()=>{
 
 export const createStory= async (data)=>{
   
-
-
-
-   
-    let res = await axios.post('/api/v1/createstroy', data);
+    let res = await axios.post('/api/v1/createstroy', data).then(()=>{
+        return;
+    })
 
 }
 

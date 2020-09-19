@@ -4,11 +4,12 @@ const schema= mongoose.Schema;
 const DataSchema=schema({
 
     userid:String,
-    userName:String,
     title:String,
     body:String,
     status:String,
     comments:Boolean,
+    imageURL:String
+    
   
 
 
