@@ -1,0 +1,21 @@
+.features{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-image: linear-gradient(to right bottom, rgba($color-grey-dark,0.7),rgba($color-grey-dark-2,0.8)),url(../../components/homepagecomponents/Features/nat-6.jpg);
+
+
+
+}
+
+@media(max-width:900px){
+.features{
+    flex-direction: column;
+    align-items: center;
+
+
+}
+
+}
+
+// background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.5), rgba(40, 180, 133, 0.8)), url(/static/media/nat-1-large.7fdf2a88.jpg);

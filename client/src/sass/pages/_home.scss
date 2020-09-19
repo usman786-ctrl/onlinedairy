@@ -1,0 +1,40 @@
+
+
+
+
+
+
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-image: linear-gradient(to left , rgba(126,213,111,1), rgba(40,180,133,1));
+    color: white;
+    align-items: center;
+
+
+}
+
+@media(max-width:900px){
+.footer{
+    flex-direction: column;
+    background-image: linear-gradient(to bottom , rgba(126,213,111,1), rgba(40,180,133,1));
+
+
+
+
+    }
+
+}
+
+.storyreaper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+
+
+
+}

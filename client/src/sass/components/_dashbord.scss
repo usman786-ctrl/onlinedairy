@@ -1,0 +1,114 @@
+.userName{
+    padding: 1rem;
+    background-image: linear-gradient(to right, #303f9f,#c51162);
+    color: white;
+    text-align: center;
+}
+
+
+
+.story-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    margin-left: 1.5rem;
+    &>*{
+        font-weight: 500;
+    }
+
+    &--title{
+            font-size: 1rem;
+    }
+    
+
+ 
+}
+
+
+
+.storyreaper{
+    margin: 1.5rem 1rem;
+    display: flex;
+flex-direction: column;
+align-items: stretch;
+&>*{
+    margin-left: 1rem;
+}
+&__actions>button{
+        margin: 1rem 1rem;
+}
+}
+
+
+.storyData-reaper{
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.storydata{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-column-gap: 4rem;
+
+  
+    align-items: center;
+    justify-content: space-between;
+    &--title{
+        width: 21rem;
+text-align: center;
+    }
+
+    &--comment{
+        font-size: 1.3rem;
+font-weight: 500;
+text-align: center;
+
+    }
+
+    &--status{
+        text-align: center;
+
+font-weight: 200;
+font-size: 1.5rem
+    }
+
+    &--srl{
+        font-size: 1rem;
+
+    }
+
+}
+
+
+.newStroyButton{
+    position: absolute !important;
+top: 79% !important;
+right: 13% !important;
+z-index: 10 !important;
+}
+
+@media(max-width:900px){
+.storydata{
+    grid-template-rows: repeat(6,1fr);
+    grid-row-gap: 1rem;
+    grid-template-columns: repeat(1,1fr);
+
+
+&>*{
+    margin: 1rem 0;
+}
+
+}
+
+
+    
+}
+
+.notStoryText{
+    font-size: 1.2rem;
+font-weight: 800;
+padding: 10rem;
+text-align: center;
+}

@@ -1,0 +1,98 @@
+.imageContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &>img{
+        border-radius: 100%;
+        margin-left: 1rem;
+        width: 2.5rem;
+height: 2.5rem;
+        
+
+    }
+
+}
+
+
+.large-menu-classname{
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+
+    .menuList{
+       
+         
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    flex-direction: row;
+
+   
+        &__menuItem{
+    color: white;
+
+            padding: 1rem;
+            text-decoration: none;
+           
+    
+        }
+    }
+    .divider{
+        display: none;
+    }
+    
+   
+
+}
+
+
+.small-menu-classname{
+    background-image: linear-gradient(to bottom, $color-primary-light, $color-primary-dark);
+
+
+
+    &>:first-child{
+        text-align: end;
+        &>svg{
+            width: 3rem;
+            height: 9vh;
+        }
+    }
+    .button{
+        color: rebeccapurple;
+        & > svg{
+        
+        }
+    }
+    .menuList{
+         
+        display: flex;
+        justify-content: space-evenly;
+
+        flex-direction: column;
+
+        &__menuItem:not(:first-child){
+        color: white;
+
+                text-decoration: none;
+                margin: 1rem 0;
+             
+        
+        
+            }
+        }
+        .divider{
+            display: block;
+        }
+
+
+.imageContainer{
+    justify-content: center;
+
+
+}
+        
+  
+   
+
+}
