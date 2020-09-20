@@ -5,6 +5,7 @@ import {Divider} from '@material-ui/core';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
+import {Avatar} from '@material-ui/core';
 
 
 
@@ -44,9 +45,9 @@ class Example extends Component {
 
                   <Link className='menuList__menuItem imageContainer'  onClick={this.logOut} to='/login'>
                     <div>{this.props.auth.isSignedIn ?'Logout':'logIn with google' } </div>
-                    { this.props.auth.isSignedIn && <img src={this.props.auth.profile.getImageUrl()} alt='' />}
+                    { this.props.auth.isSignedIn &&  <Avatar style={{marginLeft:'1rem'}} alt="Remy Sharp" src={this.props.auth.profile.getImageUrl()?this.props.auth.profile.getImageUrl():null} />}
+               
                     
-                   
                     </Link>
                   <Divider className='divider'/>
                   <Link className='menuList__menuItem' to='/forDevelopers'>ForDevelopers</Link>

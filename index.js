@@ -26,7 +26,9 @@ mongoose
 
 
    
-    
+     StoryData.find({}).then((a)=>{
+       console.log(a);
+     })
 
 app.post('/api/v1/dashbordstories',(req,res)=>{
 
@@ -52,7 +54,7 @@ app.post('/api/v1/dashbordstories',(req,res)=>{
 app.post('/api/v1/createstroy',async (req,res)=>{
 
     const {imageURL,userid}= req.body;
-
+  // console.log('imageURL '+imageURL,userid);
      
     const options = {
         url: imageURL,

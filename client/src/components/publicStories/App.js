@@ -30,15 +30,26 @@ class App extends Component {
           {
             this.props.userData.length!==0 ? this.props.userData.map((data,index)=>{
               const {userid,title,body,imageURL}=data;
+              try{
                 return <PublicStories 
                 key={index}
                 name={userid.split(' ')[0]}
                 title={title}
                 body={body}
-                image={require('../../image/'+imageURL)}
-              />
-            }):<div className='notStoryText'>No Public story found</div>
+                image={require('../../image/'+imageURL)}/>
 
+              }catch(err){
+                return <PublicStories 
+                key={index}
+                name={userid.split(' ')[0]}
+                title={title}
+                body={body}
+                image={null}/>
+
+              }
+                
+              
+            }):<div className='notStoryText'>No Public story found</div>
           }
            </div>
           
