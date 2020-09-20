@@ -31,6 +31,7 @@ class App extends Component {
             this.props.userData.length!==0 ? this.props.userData.map((data,index)=>{
               const {userid,title,body,imageURL}=data;
               try{
+                console.log("try");
                 return <PublicStories 
                 key={index}
                 name={userid.split(' ')[0]}
@@ -39,6 +40,7 @@ class App extends Component {
                 image={require('../../image/'+imageURL)}/>
 
               }catch(err){
+                console.log("catch");
                 return <PublicStories 
                 key={index}
                 name={userid.split(' ')[0]}

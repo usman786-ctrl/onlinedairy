@@ -21,7 +21,10 @@ class Stoygenerater extends Component{
             const {title,status,comments,body,id} =  val;
             const data={title,status,comments,body,id};
             updateData(data);
+            setTimeout(() => {
             this.props.history.push('/dashbord')
+                
+            }, 1000);
 
 
         }else{
@@ -31,6 +34,7 @@ class Stoygenerater extends Component{
             const obj =  this.props.auth.profile;
             const data={...val,userid:obj.getName()+' '+obj.getId(),imageURL:obj.getImageUrl()}
             createStory(data);
+            
             this.props.history.push('/dashbord')
 
         }

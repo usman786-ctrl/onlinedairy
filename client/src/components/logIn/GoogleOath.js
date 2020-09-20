@@ -22,7 +22,7 @@ class OathClient extends Component {
 
                     window.gapi.load('client:auth2', () => {
                         window.gapi.client.init({
-                            client_id: '868514593522-2v3tminrpb11m0n7nc6v7lalsafcvbnr.apps.googleusercontent.com',
+                            client_id: '868514593522-gl76qmghe9e17qa2cp1lb2oq1da227co.apps.googleusercontent.com',
                             scope: 'profile email'
             
                         }).then(() => {
