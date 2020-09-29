@@ -3,6 +3,7 @@ import authReducert from './Authreducer';
 import DashbordData from './DashbordData';
 import editData from './EditFoemReducer';
 import PublicStories from './publicStories';
+import Slide from './LoaderReducer';
 
 import { reducer as formReducer } from 'redux-form';
 
@@ -11,6 +12,7 @@ export default combineReducers({
     form: formReducer,
     DashbordData:DashbordData,
     editData:editData,
-    PublicData:PublicStories
+    PublicData:PublicStories,
+    slider:Slide
 
 })

@@ -49,13 +49,37 @@ export const dashbordstories= (userid)=> async (dispatch)=>{
     
 }
 
+const show=()=>{
+    return {
+        type:'SHOW',
+    }
+    
+}
+
+const close=()=>{
+    return {
+        type:'CLOSE',
+    }
+    
+}
+
+
+
+
+
 
 export const publicStories=()=>(dispatch)=>{
+    dispatch(  {
+        type:'CLOSE',
+    })
+
     
     axios.get('/api/v1/public').then((result)=>{
-
-
-      dispatch({
+        dispatch(  {
+            type:'SHOW',
+        })
+        
+        dispatch({
         type:'PUBLIC_DATA',
         payload:result.data
 
@@ -99,3 +123,5 @@ export const deleteData=(data)=>async (dispatch)=>{
     })
       
   }
+
+  
